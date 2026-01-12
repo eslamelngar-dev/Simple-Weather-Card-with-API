@@ -44,7 +44,7 @@ export default function CardBody({ temperature, desc, min, max, icon }) {
           </div>
         </div>
 
-        <div sx={{ fontSize: 150 }}>
+        <div>
           <img src={icon} />
         </div>
       </div>
