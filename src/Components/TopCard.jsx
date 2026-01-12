@@ -22,7 +22,7 @@ export default function TopCard() {
 
         <Typography
           variant="subtitle1"
-          style={{ color: "white", fontSize: "30px", marginLeft: "20px" }}
+          style={{ color: "white", fontSize: "1.3rem", marginLeft: "20px" }}
         >
           {moment().format("D / M")}
         </Typography>
