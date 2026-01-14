@@ -26,10 +26,10 @@ export default function CardBody({ temperature, desc, min, max, icon,isLoading }
             }}
           >
             {isLoading ? (
-              <CircularProgress />
-            ) : (
+              <CircularProgress color="white"/>
+            ) : 
               <Typography variant="h1">{temperature}°</Typography>
-            )}
+            }
           </div>
 
           <Typography variant="h6" sx={{ opacity: 0.8 }}>
