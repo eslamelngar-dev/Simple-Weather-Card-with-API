@@ -1,3 +1,19 @@
+## Tools & Library used:-
+
+## -axios
+
+## -mui.material
+
+## -redux
+
+## -moment.js
+
+## -useEffect
+
+## -useState
+
+## -open Weather Map Api
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
