@@ -6,14 +6,17 @@ import TopCard from "./TopCard";
 import CardBody from "./CardBody";
 import { useSelector, useDispatch } from "react-redux";
 import { setweather } from "../weatherSlice";
+import { setLoading } from "../weatherSlice";
 
 export default function CloudApp() {
   const dispatch = useDispatch();
-  const temp = useSelector((state) => state.weather);
+const { temperature, min, max, desc, icon, isLoading } = useSelector((state) => state.weather);
+
 
   useEffect(() => {
     const controller = new AbortController();
 
+    dispatch(setLoading())
     axios
       .get(
         "https://api.openweathermap.org/data/2.5/weather?lat=31.238292068629814&lon=29.954716341145474&appid=dcb46835d14de0ec8d5eb597fdd81d23",
@@ -72,10 +75,12 @@ export default function CloudApp() {
       <TopCard />
 
       <CardBody
-        temperature={temp.temperature}
-        min={temp.min}
-        max={temp.max}
-        icon={temp.icon}
+        temperature={temperature}
+        min={min}
+        max={max}
+        desc={desc}
+        icon={icon}
+        isLoading ={isLoading}
       />
     </div>
   </Container>

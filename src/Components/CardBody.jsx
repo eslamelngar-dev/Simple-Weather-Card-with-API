@@ -1,7 +1,8 @@
 import Typography from "@mui/material/Typography";
 import { useEffect } from "react";
+import { CircularProgress } from "@mui/material";
 
-export default function CardBody({ temperature, desc, min, max, icon }) {
+export default function CardBody({ temperature, desc, min, max, icon,isLoading }) {
   useEffect(() => {});
 
   return (
@@ -24,7 +25,11 @@ export default function CardBody({ temperature, desc, min, max, icon }) {
               marginRight: "-30px",
             }}
           >
-            <Typography variant="h1">{temperature}°</Typography>
+            {isLoading ? (
+              <CircularProgress />
+            ) : (
+              <Typography variant="h1">{temperature}°</Typography>
+            )}
           </div>
 
           <Typography variant="h6" sx={{ opacity: 0.8 }}>
@@ -44,7 +49,7 @@ export default function CardBody({ temperature, desc, min, max, icon }) {
           </div>
         </div>
 
-        <div style={{marginRight: "-24px"}}>
+        <div style={{ marginRight: "-24px" }}>
           <img src={icon} />
         </div>
       </div>
